@@ -1,0 +1,103 @@
+🤖 AI-POWERED ATS RESUME ANALYZER (Streamlit + Gemini API)
+
+This project provides a robust, user-friendly web application for analyzing a resume against a specific job description (JD) to predict its performance against an Applicant Tracking System (ATS). It uses the power of the Google Gemini 2.5 Flash model with structured JSON output to provide a quantifiable score and detailed, actionable feedback for improvement.
+
+✨ Features
+
+PDF Resume Upload: Easily upload your resume in PDF format for text extraction.
+
+ATS Match Score: Generates a compatibility score (0-100%) between the extracted resume content and the pasted Job Description.
+
+Structured Feedback: Provides detailed, categorized advice across three critical areas:
+
+Keyword Match: Identifies missing or underutilized keywords.
+
+Content Impact: Evaluates the use of action verbs and quantifiable achievements.
+
+Formatting & Parsability: Checks for common structural issues that confuse ATS scanners.
+
+Streamlit UI: A clean, responsive web interface built entirely in Python.
+
+Secure API Handling: Loads the Gemini API Key securely using a .env file.
+
+🚀 Technologies Used
+
+Technology
+
+Purpose
+
+Python 3.9+
+
+Core programming language.
+
+Streamlit
+
+Web application framework for the UI.
+
+Google Gemini API
+
+Powers the core analysis, scoring, and feedback generation (gemini-2.5-flash-preview-09-2025).
+
+Pydantic
+
+Ensures the AI's output adheres to a strict JSON structure (schema enforcement).
+
+pypdf
+
+Handles text extraction from uploaded PDF resume files.
+
+python-dotenv
+
+Securely loads environment variables from the .env file.
+
+⚙️ Setup and Installation
+
+Follow these steps to get your ATS Analyzer running locally.
+
+Prerequisites
+
+Python: Python 3.9 or higher is required.
+
+API Key: A Gemini API Key from Google AI Studio.
+
+Step 1: Clone the Repository (Local Setup)
+
+git clone [https://github.com/YourUsername/ats-resume-analyzer.git](https://github.com/YourUsername/ats-resume-analyzer.git)
+cd ats-resume-analyzer
+
+
+Step 2: Create a Virtual Environment and Install Dependencies
+
+python -m venv venv
+source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+pip install streamlit google-genai pydantic pypdf python-dotenv
+
+
+Step 3: Configure Environment Variable
+
+Create a file named .env in the root directory of your project (where streamlit_app.py is located) and add your API key:
+
+.env
+
+# Replace YOUR_API_KEY_HERE with your actual Gemini API Key
+GEMINI_API_KEY="YOUR_API_KEY_HERE"
+
+
+Step 4: Run the Application
+
+Execute the script using Streamlit:
+
+streamlit run streamlit_app.py
+
+
+The application will automatically open in your web browser at http://localhost:8501.
+
+📖 Usage
+
+Upload Resume: Click the file uploader and select your resume in PDF format. The extracted text will be shown in a preview.
+
+Paste Job Description: Copy the entire text of the job advertisement you are applying for and paste it into the text area.
+
+Analyze: Click the "🚀 Analyze Resume & Get ATS Score" button.
+
+Review Report: View your score and navigate the tabs for detailed, actionable feedback on keywords, content impact, and formatting.
