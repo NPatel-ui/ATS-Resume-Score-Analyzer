@@ -1,0 +1,4 @@
+Python 3.11.9
+Scikit-Learn 
+Numpy
+dot-env
